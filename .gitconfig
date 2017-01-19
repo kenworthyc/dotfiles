@@ -1,20 +1,48 @@
 [core]
   # Excludesfiles allows us to set a global list of things to ignore
   excludesfile = ~/.gitignore_global
+	editor = vim
+	autocrlf = input
 
 # These are custom color options for the console
 [color]
-  status = auto
-  diff = auto
-
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-  untracked = cyan
-  changed = green
-  added = yellow
+    added = yellow
+    changed = green
+    untracked = cyan
+[push]
+	default = current # sets current git branch for pushing, no 'origin [branch]'!
 
-# Aliases are command shortcuts
 [alias]
+	a = add
   co = checkout
+  cob = checkout -b
+  br = branch
+
+	# Shorthand for commit, also enforces diff display in editor before commit
+	cm = commit --verbose -m
+  # Shorthand for a less noisy status
+  s = commit --dry-run --short
+
+  up = "!git pull origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  po = push origin HEAD
+	pl = pull
+
+	df = diff
+  cl = clone
+  st = status -s
 
   # lg is now a shortcut for a pretty log with short commit messages
   # See the log manpage: https://www.kernel.org/pub/software/scm/git/docs/git-log.html
@@ -23,17 +51,20 @@
     --graph \
     --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
     --abbrev-commit \
-    --date=relative
+		--date=relative
+	# short pretty log
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate -10
 
-  # Shorthand for commit, also enforces diff display in editor before commit
-  ci = commit --verbose
-
-  # Shorthand for a less noisy status
-  s = commit --dry-run --short
-
-  # More sensible names for adding and removing files from the readme
-  stage = add
-  unstage = reset HEAD
-
+	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
   # Edit the last commit
-  amend= commit --verbose --amend
+	amend = commit --verbose --amend
+
+[user]
+	name = Caroline
+	email = kenworthyc@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[credential]
+	helper = osxkeychain

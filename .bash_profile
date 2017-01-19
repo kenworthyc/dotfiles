@@ -1,8 +1,7 @@
-# echo is like puts for bash (bash is the program running in your terminal)
-echo "Loading ~/.bash_profile a shell script that runs in every new terminal you open"
 
+# echo is like puts for bash (bash is the program running in your terminal)
 # $VARIABLE will render before the rest of the command is executed
-echo "Logged in as $USER at $(hostname)"
+echo "Logged in as $USER on $(hostname)"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -29,52 +28,77 @@ test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
 git_completion_script=/usr/local/etc/bash_completion.d/git-completion.bash
 test -s $git_completion_script && source $git_completion_script
 
-# A more colorful prompt
-# \[\e[0m\] resets the color to default color
-c_reset='\[\e[0m\]'
-#  \e[0;31m\ sets the color to red
-c_path='\[\e[0;31m\]'
-# \e[0;32m\ sets the color to green
-c_git_clean='\[\e[0;32m\]'
-# \e[0;31m\ sets the color to red
-c_git_dirty='\[\e[0;31m\]'
+# Path for twig-lint
+test -d $HOME/.composer/vendor/asm89/twig-lint/bin && export PATH="$PATH:$HOME/.composer/vendor/asm89/twig-lint/bin"
 
-# PS1 is the variable for the prompt you see everytime you hit enter
-PROMPT_COMMAND=$PROMPT_COMMAND' PS1="${c_path}\W${c_reset}$(git_prompt) :> "'
+# Configure autocompletions to work with git aliases
+# (git aliases in .gitconfig)
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
 
-export PS1='\n\[\033[0;31m\]\W\[\033[0m\]$(git_prompt)\[\033[0m\]:> '
-
-# determines if the git branch you are on is clean or dirty
-git_prompt ()
-{
-  # Is this a git directory?
-  if ! git rev-parse --git-dir > /dev/null 2>&1; then
-    return 0
-  fi
-  # Grab working branch name
-  git_branch=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
-  # Clean or dirty branch
-  if git diff --quiet 2>/dev/null >&2; then
-    git_color="${c_git_clean}"
-  else
-    git_color=${c_git_dirty}
-  fi
-  echo " [$git_color$git_branch${c_reset}]"
+function_exists() {
+    declare -f -F $1 > /dev/null
+    return $?
 }
+
+for al in `__git_aliases`; do
+    alias g$al="git $al"
+
+    complete_func=_git_$(__git_aliased_command $al)
+    function_exists $complete_fnc && __git_complete g$al $complete_func
+done
+
+# Git branch in prompt
+
+parse_git_branch() {
+
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e's/* \(.*\)/[\1]/'
+
+}
+
+export PS1="\W\[\033[32m\] \$(parse_git_branch)\[\033[00m\]\033"
+export PS2=">> "
+
+function _update_ps1() {
+    PS1="$(~/powerline-shell/powerline-shell.py $? 2> /dev/null) \n>> : "
+}
+
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
 # Colors ls should use for folders, files, symlinks etc, see `man ls` and
 # search for LSCOLORS
 export LSCOLORS=ExGxFxdxCxDxDxaccxaeex
-# Force ls to use colors (G) and use humanized file sizes (h)
-alias ls='ls -Gh'
 
 # Force grep to always use the color option and show line numbers
 export GREP_OPTIONS='--color=always'
 
-# Set sublime as the default editor
-which -s subl && export EDITOR="subl --wait"
+# Use updated Vim (via MacVim (instead of preinstalled Vim 7.3))
+alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
+# Set Vim as the default editor
+which -s vim && export EDITOR="vim --wait"
+
+# Temp aliases for projects
+alias weeker="cd ~/Code/weeker && export DROPBOX_CALLBACK='http://localhost:9393/sources/dropbox-complete' && export DROPBOX_SECRET='26p5b9yt3hlvtar' && export DROPBOX_KEY='x7lsyldeqwe0bpi' && export TWITTER_KEY='hf1EURRMl0v1p5qAWRffvAHGh' && export TWITTER_SECRET='JwNi8SCOn27ldXwpPBcBzTDzPVGcsWM3CPXAIkoTFQ3oy5klPJ' && export TWITTER_CALLBACK='http://localhost:9393/twitter-authentication-return' && export TUMBLR_KEY='myqBgaV42cshZuUD7keNYBOvMsQv9AmSulkWXTB6ogaRBndEGW' && export TUMBLR_SECRET='JTZRU8jEeiQ24BOWmdZe7EPvKoxYTUXFJC8r0kx1lEWvTbRHAv' && export TUMBLR_CALLBACK='http://localhost:9393/tumblr-callback' && export SOUNDCLOUD_CLIENT_ID='23973043e418fd758dc43e1359fd0bf6' && SOUNDCLOUD_SECRET='1dfb5c1d94163c190c51468e10d54ed1' && export SOUNDCLOUD_CALLBACK='http://localhost:9393/soundcloud-complete'"
+
+alias sop="cd ~/SOP/someoddpilot"
+alias nike="cd ~/SOP/nike-hat-customizer/wp-content/themes/nike-hat-customizer-theme"
 
 # Useful aliases
+alias ll="ls -Glah"
 
-alias e="subl"
 alias be="bundle exec"
+alias slashburn="be rake db:drop && be rake db:create && be rake db:migrate && be rake db:seed && be rake db:test:prepare"
+
+alias git="hub"
+alias gph="git push heroku master; heroku run rake db:migrate"
+
+alias phpmamp='/Applications/MAMP/bin/php/php5.4.42/bin/php'
+
+alias pr="hub pull-request"
+
+export PATH="/usr/local/mysql/bin:$PATH"
+
+eval "$(hub alias -s)"
