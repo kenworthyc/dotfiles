@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/Caroline/Code/mentors4all'
+let g:netrw_dirhist_2='/Users/Caroline/Code/mentors4all/mentors4all'
+let g:netrw_dirhist_3='/Users/Caroline/SOP/nike-hat-customizer/wp-content/themes/nike-hat-customizer-theme/src/cart/partials/items'
+let g:netrw_dirhist_4='/Users/Caroline/.zprezto'
+let g:netrw_dirhist_5='/Users/Caroline/SOP/nike-hat-customizer/wp-content/themes/nike-hat-customizer-theme/src'
