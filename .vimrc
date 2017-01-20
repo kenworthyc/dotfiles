@@ -40,15 +40,15 @@ set incsearch "show search matches as you type
 set gdefault "Apply substitutions globally on a line
 
 "tabs based on filetype
-	"by default, the indent is 2 spaces.
-	set expandtab
-	set shiftwidth=2
-	set softtabstop=2
-	set tabstop=2
-	"for html/erb, markdown/yaml files, 2 spaces
-	autocmd Filetype ruby,html,erb setlocal ts=2 sw=2 expandtab
-	"for js/coffee files, 4 spaces
-	autocmd Filetype javascript,coffeescript setlocal ts=4 sw=4 sts=0 expandtab
+"by default, the indent is 2 spaces.
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+"for html/erb, markdown/yaml files, 2 spaces
+autocmd Filetype ruby,html,erb setlocal ts=2 sw=2 expandtab
+"for js/coffee files, 4 spaces
+autocmd Filetype javascript,coffeescript setlocal ts=4 sw=4 sts=0 expandtab
 
 "indents pasted text. elaborated at https://github.com/sickill/vim-pasta
 nnoremap p p`[v`]=
@@ -87,7 +87,7 @@ set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h16
 
 "syntastic beginner settings
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
