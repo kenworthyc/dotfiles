@@ -4,8 +4,18 @@
 # such as icon placement
 .DS_Store
 
+# system files for ruby versioning
+.ruby-version
+
 # Backup files created by the vim text editor
 .swp
+
+# Undo files created by the vim text editor
+*.un~
+
+# Sublime-project configs
+*.sublime-project
+*.sublime-workspace
 
 # *.sqlite3 are local databases.  Make your own, don't share
 *.sqlite3
