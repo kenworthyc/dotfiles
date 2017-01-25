@@ -7,7 +7,8 @@
 # system files for ruby versioning
 .ruby-version
 
-# Backup files created by the vim text editor
+# Backup files created by vim, vim file history
+.netrwhist
 .swp
 
 # Undo files created by the vim text editor
