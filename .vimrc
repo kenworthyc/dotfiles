@@ -2,8 +2,8 @@ execute pathogen#infect()
 call pathogen#helptags()
 
 filetype plugin indent on
-syntax enable
 syntax on
+syntax enable
 
 set nocompatible               " Mystery vim optimizations over vi
 set modelines=0								 " Mystery security gap vanquished
