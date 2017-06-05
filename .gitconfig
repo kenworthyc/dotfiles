@@ -6,24 +6,26 @@
 
 # These are custom color options for the console
 [color]
-    branch = auto
-    diff = auto
-    status = auto
+  branch = auto
+  diff = auto
+  status = auto
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+  added = yellow
+  changed = green
+  untracked = cyan
+
+# sets current git branch for pushing, no 'origin [branch]'!
 [push]
-	default = current # sets current git branch for pushing, no 'origin [branch]'!
+	default = current
 
 [alias]
 	a = add
