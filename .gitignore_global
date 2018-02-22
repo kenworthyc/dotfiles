@@ -14,6 +14,9 @@
 # Undo files created by the vim text editor
 *.un~
 
+# php binary files
+.phpintel/
+
 # Sublime-project configs
 *.sublime-project
 *.sublime-workspace

@@ -24,6 +24,8 @@
   untracked = cyan
 
 # sets current git branch for pushing, no 'origin [branch]'!
+[branch]
+  autoSetupMerge = true
 [push]
 	default = current
 
