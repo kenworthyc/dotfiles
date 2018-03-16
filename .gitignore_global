@@ -8,11 +8,11 @@
 .ruby-version
 
 # Backup files created by vim, vim file history
-.netrwhist
-.swp
+*.netrwhist
+*.swp
 
 # Undo files created by the vim text editor
-.un~
+*.un~
 
 # php binary files
 .phpintel/
