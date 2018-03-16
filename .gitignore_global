@@ -12,7 +12,7 @@
 .swp
 
 # Undo files created by the vim text editor
-*.un~
+.un~
 
 # php binary files
 .phpintel/
@@ -29,3 +29,4 @@
 
 # .Trashes holds disk specific trash folders
 .Trashes
+
