@@ -20,6 +20,7 @@ set scrolloff=2                " offsets scrolling by two lines at bottom/top of
 set sidescrolloff=5            " offsets horizontal scrolling by 5 chars
 set backspace=indent,eol,start " backspace over EOL in insert mode
 set autoread                   " vim will auto-reload a changed file instead of ask what to do
+au FocusGained,BufEnter * :checktime " reread file whenever you change focus to a file
 set ttyfast
 set ruler
 set wildmenu
