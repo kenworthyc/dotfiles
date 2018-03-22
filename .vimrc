@@ -14,7 +14,6 @@ set modelines=0								 " Mystery security gap vanquished
 nmap ; :
 
 set number                     " enable line numbers
-set relativenumber             " line numbers relative to cursor
 set noswapfile                 " Do not create swap files
 set undofile									 " Keep track of undo changes after file close
 set scrolloff=2                " offsets scrolling by two lines at bottom/top of page
@@ -95,9 +94,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-let g:syntastic_html_checkers = ["twig-lint", "vim-twig"]
-let g:syntastic_twig_twiglint_exec = 'php'
-let g:syntastic_twig_twiglint_exe = 'php ~/.composer/vendor/asm89/twig-lint/bin/twig-lint'
+let g:syntastic_html_checkers = ["vim-twig"]
 
 "set emmet to HTML/CSS files
 let g:user_emmet_install_global = 1
