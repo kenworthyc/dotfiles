@@ -50,8 +50,6 @@ autocmd Filetype ruby,html,erb setlocal ts=2 sw=2 expandtab
 "for js/coffee files, 4 spaces
 autocmd Filetype javascript,coffeescript setlocal ts=4 sw=4 sts=0 expandtab
 
-"indents pasted text. elaborated at https://github.com/sickill/vim-pasta
-nnoremap p p`[v`]=
 "remove trailing whitespace on save
 autocmd BufWritePre <buffer> :%s/\s\+$//e
 
@@ -82,8 +80,16 @@ set background=dark
 colorscheme monokai
 nmap <leader>mo :colorscheme monokai<CR>
 nmap <leader>so :colorscheme solarized<CR>
+nmap <leader>at :colorscheme base16-atelier-dune<CR>
 
 set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h16
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'html.twig' : 1,
+    \}
 
 "syntastic beginner settings
 set statusline+=%#warningmsg#
