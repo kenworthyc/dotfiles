@@ -73,13 +73,13 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 "flip background between light and dark
-map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+" map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 "font and colorschemes
 set background=dark
-colorscheme monokai
-nmap <leader>mo :colorscheme monokai<CR>
-nmap <leader>so :colorscheme solarized<CR>
+colorscheme base16-railscasts
+nmap <leader>mo :colorscheme base16-monokai<CR>
+nmap <leader>so :colorscheme base16-solarized-dark<CR>
 nmap <leader>at :colorscheme base16-atelier-dune<CR>
 
 set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h16
