@@ -81,8 +81,6 @@ alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
 which -s vim && export EDITOR="vim --wait"
 
 # Temp aliases for projects
-alias weeker="cd ~/Code/weeker && export DROPBOX_CALLBACK='http://localhost:9393/sources/dropbox-complete' && export DROPBOX_SECRET='26p5b9yt3hlvtar' && export DROPBOX_KEY='x7lsyldeqwe0bpi' && export TWITTER_KEY='hf1EURRMl0v1p5qAWRffvAHGh' && export TWITTER_SECRET='JwNi8SCOn27ldXwpPBcBzTDzPVGcsWM3CPXAIkoTFQ3oy5klPJ' && export TWITTER_CALLBACK='http://localhost:9393/twitter-authentication-return' && export TUMBLR_KEY='myqBgaV42cshZuUD7keNYBOvMsQv9AmSulkWXTB6ogaRBndEGW' && export TUMBLR_SECRET='JTZRU8jEeiQ24BOWmdZe7EPvKoxYTUXFJC8r0kx1lEWvTbRHAv' && export TUMBLR_CALLBACK='http://localhost:9393/tumblr-callback' && export SOUNDCLOUD_CLIENT_ID='23973043e418fd758dc43e1359fd0bf6' && SOUNDCLOUD_SECRET='1dfb5c1d94163c190c51468e10d54ed1' && export SOUNDCLOUD_CALLBACK='http://localhost:9393/soundcloud-complete'"
-
 alias sop="cd ~/SOP/someoddpilot"
 alias nike="cd ~/SOP/nike-hat-customizer/wp-content/themes/nike-hat-customizer-theme"
 
