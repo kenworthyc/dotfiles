@@ -45,10 +45,8 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-"for html/erb, markdown/yaml files, 2 spaces
-autocmd Filetype ruby,html,erb setlocal ts=2 sw=2 expandtab
-"for js/coffee files, 4 spaces
-autocmd Filetype javascript,coffeescript setlocal ts=4 sw=4 sts=0 expandtab
+"how to set filetype-specific tabs
+"autocmd Filetype ruby,html,erb setlocal ts=2 sw=2 expandtab
 
 "remove trailing whitespace on save
 autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -88,9 +86,7 @@ set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h16
 let g:mta_filetypes = {
     \ 'html' : 1,
     \ 'xhtml' : 1,
-    \ 'xml' : 1,
-    \ 'jinja' : 1,
-    \ 'html.twig' : 1,
+    \ 'xml' : 1
     \}
 
 "syntastic beginner settings
@@ -103,7 +99,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-let g:syntastic_html_checkers = ["vim-twig"]
 
 "set emmet to HTML/CSS files
 let g:user_emmet_install_global = 1
