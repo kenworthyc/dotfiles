@@ -28,9 +28,6 @@ test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
 git_completion_script=/usr/local/etc/bash_completion.d/git-completion.bash
 test -s $git_completion_script && source $git_completion_script
 
-# Path for twig-lint
-test -d $HOME/.composer/vendor/asm89/twig-lint/bin && export PATH="$PATH:$HOME/.composer/vendor/asm89/twig-lint/bin"
-
 # Configure autocompletions to work with git aliases
 # (git aliases in .gitconfig)
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -80,10 +77,6 @@ alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
 # Set Vim as the default editor
 which -s vim && export EDITOR="vim --wait"
 
-# Temp aliases for projects
-alias sop="cd ~/SOP/someoddpilot"
-alias nike="cd ~/SOP/nike-hat-customizer/wp-content/themes/nike-hat-customizer-theme"
-
 # Useful aliases
 alias ll="ls -Glah"
 
@@ -92,8 +85,6 @@ alias slashburn="be rake db:drop && be rake db:create && be rake db:migrate && b
 
 alias git="hub"
 alias gph="git push heroku master; heroku run rake db:migrate"
-
-alias phpmamp='/Applications/MAMP/bin/php/php5.4.42/bin/php'
 
 alias pr="hub pull-request"
 
