@@ -3,11 +3,6 @@
 # $VARIABLE will render before the rest of the command is executed
 echo "Logged in as $USER on $(hostname)"
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-# Path for RVM
-test -d "$HOME/.rvm/bin" && PATH="$PATH:$HOME/.rvm/bin"
-
 # Rbenv autocomplete and shims
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Path for RBENV

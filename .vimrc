@@ -75,9 +75,9 @@ set background=dark
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 "font and colorschemes
-let base16colorspace=256  " Access colors present in 256 colorspace
+"let base16colorspace=256  " Access colors present in 256 colorspace
 
-colorscheme base16-eighties
+colorscheme monokai
 nmap <leader>mo :colorscheme base16-monokai<CR>
 nmap <leader>so :colorscheme base16-solarized-dark<CR>
 nmap <leader>at :colorscheme base16-atelier-dune<CR>
