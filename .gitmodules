@@ -1,15 +1,55 @@
 [submodule "prezto"]
-	path = prezto
-	url = git@github.com:kenworthyc/prezto.git
+  path = prezto
+  url = git@github.com:kenworthyc/prezto.git
 [submodule ".vim/bundle/base16-vim"]
-	path = .vim/bundle/base16-vim
-	url = https://github.com/chriskempson/base16-vim
+  path = .vim/bundle/base16-vim
+  url = https://github.com/chriskempson/base16-vim
 [submodule ".vim/bundle/MatchTagAlways"]
-	path = .vim/bundle/MatchTagAlways
-	url = https://github.com/Valloric/MatchTagAlways
+  path = .vim/bundle/MatchTagAlways
+  url = https://github.com/Valloric/MatchTagAlways
 [submodule "base16-iterm2"]
-	path = base16-iterm2
-	url = https://github.com/chriskempson/base16-iterm2
+  path = base16-iterm2
+  url = https://github.com/chriskempson/base16-iterm2
+[submodule "ctrlp.vim"]
+  path = .vim/bundle/ctrlp.vim
+  url = https://github.com/kien/ctrlp.vim
+[submodule "nerdtree"]
+  path = .vim/bundle/nerdtree
+  url = https://github.com/scrooloose/nerdtree
 [submodule ".vim/bundle/vim-polyglot"]
-	path = .vim/bundle/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
+  path = .vim/bundle/vim-polyglot
+  url = https://github.com/sheerun/vim-polyglot
+[submodule ".vim/bundle/delimitMate"]
+  path = .vim/bundle/delimitMate
+  url = https://github.com/Raimondi/delimitMate
+[submodule ".vim/bundle/emmet-vim"]
+  path = .vim/bundle/emmet-vim
+  url = https://github.com/mattn/emmet-vim
+[submodule ".vim/bundle/vim-commentary"]
+  path = .vim/bundle/vim-commentary
+  url = https://github.com/tpope/vim-commentary
+[submodule ".vim/bundle/vim-endwise"]
+  path = .vim/bundle/vim-endwise
+  url = https://github.com/tpope/vim-endwise
+[submodule ".vim/bundle/vim-surround"]
+  path = .vim/bundle/vim-surround
+  url = https://github.com/tpope/vim-surround
+[submodule ".vim/bundle/vim-rails"]
+  path = .vim/bundle/vim-rails
+  url = https://github.com/tpope/vim-rails
+[submodule ".vim/bundle/vim-repeat"]
+  path = .vim/bundle/vim-repeat
+  url = https://github.com/tpope/vim-repeat
+[submodule ".vim/bundle/vim-airline"]
+  path = .vim/bundle/vim-airline
+  url = https://github.com/vim-airline/vim-airline
+[submodule ".vim/bundle/vim-airline-themes"]
+  path = .vim/bundle/vim-airline-themes
+  url = https://github.com/vim-airline/vim-airline-themes
+[submodule ".vim/bundle/syntastic"]
+  path = .vim/bundle/syntastic
+  url = https://github.com/vim-syntastic/syntastic
+[submodule ".vim/bundle/vim-indent-guides"]
+  path = .vim/bundle/vim-indent-guides
+  url = https://github.com/nathanaelkane/vim-indent-guides
+
