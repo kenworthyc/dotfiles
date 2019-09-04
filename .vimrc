@@ -82,7 +82,7 @@ nmap <leader>mo :colorscheme base16-monokai<CR>
 nmap <leader>so :colorscheme base16-solarized-dark<CR>
 nmap <leader>at :colorscheme base16-atelier-dune<CR>
 
-set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h16
+set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline\ Regular:h16
 let g:mta_filetypes = {
     \ 'html' : 1,
     \ 'xhtml' : 1,
